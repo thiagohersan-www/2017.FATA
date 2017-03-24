@@ -15,7 +15,6 @@ body {
   margin: 0;
   min-height: 100vh;
 
-
   background: -webkit-linear-gradient($BACKGROUND0, $BACKGROUND1, $BACKGROUND2);
   background: linear-gradient(to bottom right, $BACKGROUND0, $BACKGROUND1, $BACKGROUND2);
 
@@ -34,8 +33,9 @@ body {
   align-items: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  position: relative;
 
-  margin: $PAGE-LATERAL-SPACE;
+  margin: 0 $PAGE-LATERAL-SPACE;
 
   @include media-query(THREE) {
     width: 100%;
@@ -81,7 +81,7 @@ body {
 }
 
 #home-title-container {
-  margin: 40px auto 50px;
+  margin: 60px auto 50px;
 
   #home-title, #home-subtitle, #home-date {
     text-align: center;
@@ -96,9 +96,12 @@ body {
 #post {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 100%;
+  width: 70%;
   padding: 60px 7%;
   background-color: $TEXT-BACKGROUND;
+
+  margin-top: 30%;
+  z-index: 10;
 
   .post-date {
     margin: 32px 0;
@@ -133,7 +136,12 @@ body {
 }
 
 #post-image-header {
-  width: 100%;
+  width: 90%;
+  max-height: 500px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 0;
 
   img {
     display: block;
