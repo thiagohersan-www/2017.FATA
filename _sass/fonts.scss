@@ -1,0 +1,147 @@
+@import 'constants';
+
+$family-sans: 'Raleway', 'Arial';
+$family-mono: 'Source Code Pro', 'Courier New';
+
+$home-title-size: 2.2rem;
+$home-subtitle-size: 1.5rem;
+$home-date-size: 1rem;
+
+$list-title-size: 1.4rem;
+$list-subtitle-size: 1rem;
+
+$post-title-size: 2.3rem;
+$post-subtitle-size: 1.5rem;
+
+$text-size: 1.1rem;
+$detail-size: 1.1rem;
+
+@mixin fonts {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 14px;
+    @include media-query(THREE) { 
+      font-size: 16px;
+    }
+  }
+
+  body {
+    font: normal $text-size $family-sans;
+    color: $TEXT-COLOR;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.17rem; }
+  h4 { font-size: 1.12rem; }
+  h5 { font-size: .83rem; }
+  h6 { font-size: .75rem; }
+
+  p {
+    font: normal $text-size $family-sans;
+    word-spacing: 4px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  s {
+    text-decoration:line-through;
+  }
+
+  a {
+    font: bold $detail-size $family-sans;
+    font-weight: 900;
+    text-decoration: none;
+    color: $LINK-COLOR;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color $TRANSITION-PERIOD linear;
+
+    &:visited {
+      color: $LINK-COLOR-VISITED;
+    }
+
+    &:hover {
+      color: $LINK-COLOR-HOVER;
+    }
+  }
+
+  #home-title-container {
+    color: $TEXT-COLOR;
+
+    #home-title {
+      font: normal $home-title-size $family-sans;
+    }
+
+    #home-subtitle{
+      font: normal $home-subtitle-size $family-sans;
+    }
+
+    #home-date {
+      font: normal $home-date-size $family-sans;
+    }
+  }
+
+  #post {
+    .post-title {
+      font: bold $post-title-size $family-sans;
+      color: $TITLE-COLOR;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .post-date {
+      font-size: $detail-size;
+      font-weight: 100;
+    }
+
+    .post-subtitle {
+      font: bold $post-subtitle-size $family-sans;
+      color: $TITLE-COLOR;
+    }
+
+    .align-right {
+      text-align: right;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+    }
+  }
+
+  #post-list {
+    .post-title-container {
+      font: normal $list-title-size $family-sans;
+      text-decoration: none;
+      cursor: pointer;
+      color: $TEXT-BASE;
+      letter-spacing: 0.04em;
+
+      .post-title {
+        font-weight: 900;
+      }
+
+      .post-date, .post-artist {
+        font-size: $list-subtitle-size;
+        font-weight: 100;
+        letter-spacing: normal;
+        text-transform: none;
+      }
+    }
+  }
+
+  .social-icon a {
+    font-size: 2.2rem;
+    @include media-query(TWO) {
+      font-size: 3rem;
+    }
+  }
+}

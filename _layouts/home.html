@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    {% include meta.html %}
+  </head>
+  <body>
+    <div id="main-div">
+      <div id="home-title-container">
+        <div id="home-title">
+          {{ page.title }}
+        </div>
+        <div id="home-subtitle">
+          {{ page.subtitle }}
+        </div>
+        <div id="home-date">
+          {{ page.dates }}
+        </div>
+      </div>
+      <div id="post-list" class="post-list-container">
+        {% for post in site.posts %}
+          {% if post.categories contains 'home' %}
+            {% unless post.category contains 'draft' %}
+              <a class="post-list-item" href="{{ post.url }}">
+                <div class="post-image">
+                  {% assign coverImage = "/assets" | append: post.url | append: "cover.jpg" %}
+                  <img src="{{ coverImage }}" alt="{{ post.title }}" title="{{ post.title }}">
+                </div>
+                <div class="post-title-container">
+                  <div class="post-title">{{ post.title }}</div>
+                  {% if post.dates %}
+                    <div class="post-date">{{ post.dates }}</div>
+                  {% else %}
+                    <div class="post-artist">{{ post.artist }}</div>                    
+                  {% endif %}
+                </div>
+              </a>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

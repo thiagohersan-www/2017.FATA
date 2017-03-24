@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include head.html %}
+    {% include meta.html %}
+    {% if page.description == '404' %}
+      <script defer type="text/javascript" src="/js/404.js"></script>
+    {% endif %}
+  </head>
+  <body>
+    <div id="main-div">
+      {% if page.cover %}
+        {% assign coverImage = page.cover %}
+      {% else %}
+        {% assign coverImage = "/assets" | append: page.url | append: "cover.jpg" %}
+      {% endif %}
+      <div id="post-image-header">
+        <img src="{{ coverImage }}">
+      </div>
+      <div id="post">
+        <div class="post-title">{{ page.title }}</div>
+        <div class="post-date">
+          {% if page.artist %}
+            {{ page.artist }}
+          {% elsif page.dates %}
+            {{ page.dates }}
+          {% else %}
+            {{ page.date | date: "%d %B %Y" }}
+          {% endif %}
+        </div>
+        <content>
+          {{ content }}
+          {% include swipebox.html %}
+        </content>
+      </div>
+    </div>
+  </body>
+</html>
