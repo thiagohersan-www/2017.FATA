@@ -19,15 +19,19 @@
       </div>
       <div id="post">
         <div class="post-title">{{ page.title }}</div>
-        <div class="post-date">
-          {% if page.artist %}
-            {{ page.artist }}
-          {% elsif page.dates %}
+        {% if page.dates %}
+          <div class="post-date">
             {{ page.dates }}
-          {% else %}
+          </div>
+        {% elsif page.artist %}
+          <div class="post-artist">
+            {{ page.artist }}
+          </div>
+        {% else %}
+          <div class="post-date">
             {{ page.date | date: "%d %B %Y" }}
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
         <content>
           {{ content }}
           {% include swipebox.html %}

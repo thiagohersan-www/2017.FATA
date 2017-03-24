@@ -99,20 +99,28 @@ $detail-size: 1.1rem;
       text-align: center;
     }
 
-    @include media-query(THREE) {
-      .post-title {
-        font: bold $post-title-size $family-sans;
-      }
-    }
-
     .post-date {
       font-size: $detail-size;
+      font-weight: 100;
+    }
+
+    .post-artist {
+      font-size: $post-title-size-small;
       font-weight: 100;
     }
 
     .post-subtitle {
       font: bold $post-subtitle-size $family-sans;
       color: $TITLE-COLOR;
+    }
+
+    @include media-query(THREE) {
+      .post-title {
+        font: bold $post-title-size $family-sans;
+      }
+      .post-artist {
+        font-size: $post-title-size;
+      }
     }
 
     .align-right {
