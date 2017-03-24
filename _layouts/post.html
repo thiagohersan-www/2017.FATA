@@ -18,6 +18,9 @@
         <img src="{{ coverImage }}">
       </div>
       <div id="post">
+        <a class="close-post" href="/">
+          <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        </a>
         <div class="post-title">{{ page.title }}</div>
         {% if page.dates %}
           <div class="post-date">
@@ -36,6 +39,9 @@
           {{ content }}
           {% include swipebox.html %}
         </content>
+        <a class="home-link" href="/">
+          <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </body>
