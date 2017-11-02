@@ -7,8 +7,6 @@ baseurl: /2017/
 permalink: :title/
 include: ['_pages']
 
-destination: _site/2017
-
 # Build settings
 markdown: kramdown
 port: 4884
