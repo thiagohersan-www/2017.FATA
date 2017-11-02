@@ -4,22 +4,15 @@
     {% include head.html %}
     {% include meta.html %}
     {% include analytics.html %}
-    {% if page.description == '404' %}
-      <script defer type="text/javascript" src="/js/404.js"></script>
-    {% endif %}
   </head>
   <body>
     <div id="main-div">
-      {% if page.cover %}
-        {% assign coverImage = page.cover %}
-      {% else %}
-        {% assign coverImage = "/assets" | append: page.url | append: "cover.jpg" %}
-      {% endif %}
       <div id="post-image-header">
+        {% assign coverImage = site.baseurl | append: page.cover %}
         <img src="{{ coverImage }}">
       </div>
       <div id="post">
-        <a class="close-post" href="/">
+        <a class="close-post" href="{{ site.baseurl }}/">
           <i class="fa fa-times fa-2x" aria-hidden="true"></i>
         </a>
         <div class="post-title">{{ page.title }}</div>
@@ -41,7 +34,7 @@
           {% include swipebox.html %}
         </content>
         <div class="home-link">
-          <a href="/">
+          <a href="{{ site.baseurl }}/">
             <i class="fa fa-home fa-2x" aria-hidden="true"></i>
           </a>
         </div>

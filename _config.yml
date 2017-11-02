@@ -3,7 +3,7 @@ title: Festival de Arte e Tecnologia de Atibaia
 
 # URL
 url: http://atibaia.alab.space
-baseurl: /2017/
+baseurl: /2017
 permalink: :title/
 include: ['_pages']
 
@@ -19,6 +19,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      cover: "/assets/covers/cover00.jpg"
   -
     scope:
       path: ""
