@@ -7,9 +7,10 @@ install:
   - sudo apt-get install snapd
   - sudo snap install hugo
   - gem install jekyll
-  - git clone https://thiagohersan:$GHTOKEN@github.com/thiagohersan/atibaia.alab.space.git
 
 script:
+    - cd ..
+    - git clone https://thiagohersan:$GHTOKEN@github.com/thiagohersan/atibaia.alab.space.git
     - cd atibaia.alab.space
     - ./deploy.sh
 
