@@ -6,6 +6,7 @@ rvm:
 install:
   - sudo apt-get install snapd
   - sudo snap install hugo
+  - PATH=/snap/bin:$PATH
   - gem install jekyll
 
 script:
