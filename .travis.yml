@@ -12,6 +12,7 @@ script:
     - cd ..
     - git clone https://thiagohersan:$GHTOKEN@github.com/thiagohersan/atibaia.alab.space.git
     - cd atibaia.alab.space
+    - sed -i -e 's/git@github.com:/https:\/\/thiagohersan:$GHTOKEN@github.com\//g' .gitmodules
     - ./deploy.sh
 
 after_script:
