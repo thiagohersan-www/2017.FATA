@@ -13,7 +13,7 @@ script:
     - cd ..
     - git clone https://thiagohersan:$GHTOKEN@github.com/thiagohersan-www/atibaia.alab.space.git
     - cd atibaia.alab.space
-    - sed -i -e 's/git@github.com:/https:\/\/thiagohersan:$GHTOKEN@github.com\//g' .gitmodules
+    - sed -i -e 's/git@github.com:/https:\/\/thiagohersan-hub:$GHTOKEN@github.com\//g' .gitmodules
     - ./deploy.sh
 
 after_script:
